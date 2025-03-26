@@ -25,7 +25,7 @@ public class Program
             return;
         }
 
-        Console.Title = "InternetCorruptPoC | Made by https://github.com/GabryB03/";
+        Console.Title = "InternetCorruptPoC | Made by https://github.com/ZygoteCode/";
 
         Console.WriteLine("This program is risky for a normal machine. Run it on a virtual machine.");
         Console.WriteLine("This program will corrupt definitely your internet connection.");
